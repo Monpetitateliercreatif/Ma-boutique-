@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Boutique Handmade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fafafa;
+    }
+
+    header {
+      background: #ffb6c1;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff1493;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🧸 Boutique Handmade Crochet</h1>
+  <p>Peluches, porte-clés & accessoires faits main</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200?text=Peluche+Crochet" alt="">
+    <h3>Peluche crochet</h3>
+    <p>19,99 €</p>
+    <button onclick="alert('Ajouté au panier (version démo)')">Acheter</button>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200?text=Portecle+fait+main" alt="">
+    <h3>Porte-clé artisanal</h3>
+    <p>9,99 €</p>
+    <button onclick="alert('Ajouté au panier (version démo)')">Acheter</button>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300x200?text=Sac+fait+main" alt="">
+    <h3>Sac crochet</h3>
+    <p>29,99 €</p>
+    <button onclick="alert('Ajouté au panier (version démo)')">Acheter</button>
+  </div>
+
+</div>
+
+</body>
+</html>
