@@ -3,202 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atelier Crochet Handmade</title>
+<title>Mon petit atelier créatif</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family:Inter, sans-serif;
-  background:#faf7f5;
-  color:#2b2b2b;
+  font-family:"Quicksand", sans-serif;
+  background: linear-gradient(180deg,#fff7fb,#f3f0ff);
+  color:#444;
 }
 
-/* HEADER */
-header{
-  background:linear-gradient(120deg,#1c1c1c,#3a2f2f);
-  color:#f5f0ea;
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+nav a{
+  margin:0 10px;
+  text-decoration:none;
+  color:#555;
+  font-weight:600;
+}
+
+nav a:hover{
+  color:#c084fc;
+}
+
+/* HERO */
+.hero{
   text-align:center;
   padding:60px 20px;
 }
 
-header h1{
-  font-family:"Playfair Display",serif;
-  margin:0;
-  font-size:40px;
+.logo{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:#eee;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
 
-header p{
-  opacity:.8;
+.logo img{
+  width:100%;
 }
 
-/* LAYOUT */
-.container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-  padding:30px;
+h1{
+  font-family:"Great Vibes", cursive;
+  font-size:50px;
+  margin:20px 0 10px;
+  color:#b58cff;
+}
+
+.subtitle{
+  max-width:600px;
+  margin:auto;
+  font-size:16px;
+  line-height:1.6;
+  color:#666;
+}
+
+/* SECTIONS */
+.section{
+  padding:40px 20px;
   max-width:1100px;
   margin:auto;
 }
 
-/* CARD */
-.card{
-  background:white;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  transition:.3s;
+.section h2{
+  text-align:center;
+  color:#a78bfa;
+  margin-bottom:20px;
 }
 
-.card:hover{
-  transform:translateY(-6px);
+/* PRODUCTS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  text-align:center;
 }
 
 .card img{
   width:100%;
-  height:240px;
+  height:180px;
   object-fit:cover;
 }
 
-.card-content{
-  padding:15px;
-  text-align:center;
-}
-
-.price{
-  color:#a67c52;
-  font-weight:600;
+.card p{
   margin:10px 0;
 }
 
-/* BUTTON */
 button{
-  background:#2b2b2b;
+  background:#c084fc;
   color:white;
   border:none;
   padding:10px;
-  width:100%;
-  border-radius:25px;
+  width:80%;
+  margin-bottom:15px;
+  border-radius:20px;
   cursor:pointer;
 }
 
 button:hover{
-  background:#a67c52;
+  background:#a855f7;
 }
 
-/* CART */
-.cart{
-  position:fixed;
-  right:20px;
-  top:20px;
-  background:white;
-  padding:15px;
-  border-radius:15px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
-  width:250px;
-}
-
-.cart h3{
-  margin-top:0;
-}
-
-.cart-item{
-  font-size:14px;
-  margin-bottom:8px;
-  display:flex;
-  justify-content:space-between;
-}
-
-.checkout{
-  margin-top:10px;
-  background:#a67c52;
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  font-size:13px;
+  color:#888;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Atelier Crochet Handmade</h1>
-  <p>Créations artisanales uniques faites main</p>
-</header>
+<!-- NAV -->
+<nav>
+  <div><strong>Mon petit atelier créatif</strong></div>
+  <div>
+    <a href="#">Accueil</a>
+    <a href="produit-lapin.html">Peluches</a>
+    <a href="#">Porte-clés</a>
+    <a href="#">Accessoires</a>
+  </div>
+</nav>
 
-<!-- PANIER -->
-<div class="cart">
-  <h3>🛒 Panier</h3>
-  <div id="cart-items"></div>
-  <p><strong>Total : <span id="total">0</span> €</strong></p>
+<!-- HERO -->
+<div class="hero">
 
-  <button class="checkout" onclick="checkout()">Commander</button>
-</div>
-
-<!-- PRODUITS -->
-<div class="container">
-
-  <div class="card">
-    <img src="https://via.placeholder.com/400x400">
-    <div class="card-content">
-      <h3>Peluche Petit Chat au Coeur</h3>
-      <div class="price">24.99 €</div>
-      <a href="produit-chatcoeur.html">
-  <button>Voir le produit</button>
-</a>
-    </div>
+  <!-- LOGO -->
+  <div class="logo">
+    <img src="https://via.placeholder.com/150" alt="Logo">
   </div>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/400x400">
-    <div class="card-content">
-      <h3>Porte-clé crochet</h3>
-      <div class="price">9.99 €</div>
-      <button onclick="addToCart('Porte-clé crochet',9.99)">Ajouter</button>
-    </div>
-  </div>
+  <h1>Mon petit atelier créatif</h1>
 
+  <p class="subtitle">
+    Bienvenue dans un univers doux et enchanté 🌸  
+    Ici, chaque peluche et accessoire au crochet est imaginé et fabriqué à la main avec amour.  
+    Des créations uniques pour offrir un peu de magie et de tendresse au quotidien ✨
+  </p>
 </div>
 
-<script>
-let cart = [];
+<!-- NOUVEAUTÉS -->
+<div class="section">
 
-function addToCart(name, price){
-  cart.push({name,price});
-  updateCart();
-}
+  <h2>🌟 Nouveautés</h2>
 
-function updateCart(){
-  let list = document.getElementById("cart-items");
-  let total = 0;
-  list.innerHTML = "";
+  <div class="grid">
 
-  cart.forEach((item,i)=>{
-    total += item.price;
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <p>Peluche Lapin</p>
+      <a href="produit-lapin.html"><button>Voir</button></a>
+    </div>
 
-    list.innerHTML += `
-      <div class="cart-item">
-        ${item.name}
-        <span>${item.price}€</span>
-      </div>
-    `;
-  });
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <p>Porte-clé crochet</p>
+      <a href="#"><button>Voir</button></a>
+    </div>
 
-  document.getElementById("total").innerText = total.toFixed(2);
-}
+  </div>
+</div>
 
-function checkout(){
-  if(cart.length === 0){
-    alert("Panier vide !");
-    return;
-  }
+<!-- CATEGORIES -->
+<div class="section">
 
-  let total = cart.reduce((sum,i)=>sum+i.price,0);
+  <h2>🧸 Catégories</h2>
 
-  let url = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=tonemailpaypal@gmail.com&item_name=Boutique%20Commande&amount="+total+"&currency_code=EUR";
+  <div class="grid">
 
-  window.open(url,"_blank");
-}
-</script>
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <p>Peluches</p>
+      <a href="produit-lapin.html"><button>Découvrir</button></a>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <p>Porte-clés</p>
+      <a href="#"><button>Découvrir</button></a>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <p>Accessoires</p>
+      <a href="#"><button>Découvrir</button></a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 Mon petit atelier créatif — Fait main avec amour 💜
+</footer>
 
 </body>
 </html>
