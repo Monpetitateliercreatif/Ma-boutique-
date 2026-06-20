@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peluche Lapin</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:Inter, sans-serif;
+  background:#faf7f5;
+  color:#2b2b2b;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:30px;
+}
+
+.product{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+img{
+  width:100%;
+  max-width:400px;
+  border-radius:15px;
+}
+
+h1{
+  font-family:"Playfair Display",serif;
+}
+
+.price{
+  color:#a67c52;
+  font-size:20px;
+  margin:10px 0;
+}
+
+button{
+  background:#2b2b2b;
+  color:white;
+  border:none;
+  padding:12px;
+  width:100%;
+  border-radius:25px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#a67c52;
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:20px;
+  text-decoration:none;
+  color:#555;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a class="back" href="index.html">← Retour à la boutique</a>
+
+<div class="product">
+
+  <img src="https://via.placeholder.com/500x500">
+
+  <div>
+    <h1>Peluche Petit Chat au Coeur</h1>
+    <div class="price">24,99 €</div>
+
+    <p>
+      Peluche faite main au crochet, douce et unique. Parfaite pour un cadeau ou une décoration artisanale.
+    </p>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="contact.monpetitateliercreatif@gmail.com">
+      <input type="hidden" name="item_name" value="Peluche Petit Chat au Coeur">
+      <input type="hidden" name="amount" value="24.99">
+      <input type="hidden" name="currency_code" value="EUR">
+
+      <button type="submit">Acheter maintenant</button>
+    </form>
+
+  </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
