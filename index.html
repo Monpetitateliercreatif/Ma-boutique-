@@ -1,119 +1,155 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Boutique Handmade</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boutique Handmade Crochet</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #fafafa;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
 
-    header {
-      background: #ffb6c1;
-      padding: 20px;
-      text-align: center;
-      color: white;
-    }
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
 
-    h1 {
-      margin: 0;
-    }
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
+header p {
+  margin-top: 10px;
+  font-size: 16px;
+}
 
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
+/* PRODUITS */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
 
-    button {
-      background: #ff69b4;
-      color: white;
-      border: none;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.card:hover {
+  transform: translateY(-5px);
+}
 
-    button:hover {
-      background: #ff1493;
-    }
-  </style>
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #ff1493;
+  margin-bottom: 10px;
+}
+
+/* BOUTON */
+button {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #ff1493;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>🧸 Boutique Handmade Crochet</h1>
-  <p>Peluches, porte-clés & accessoires faits main</p>
+  <h1>🧸 Atelier Crochet Handmade</h1>
+  <p>Peluches, porte-clés et accessoires faits main avec amour 💕</p>
 </header>
 
 <div class="container">
 
+  <!-- PRODUIT 1 -->
   <div class="card">
-    <img src="https://via.placeholder.com/300x200?text=Peluche+Crochet" alt="">
-    <h3>Peluche crochet</h3>
-    <p>19,99 €</p>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-  <input type="hidden" name="cmd" value="_xclick">
-  <input type="hidden" name="business" value="contact.monpetitateliercreatif@gmail.com">
-  <input type="hidden" name="item_name" value="Peluche crochet">
-  <input type="hidden" name="amount" value="19.99">
-  <input type="hidden" name="currency_code" value="EUR">
+    <img src="https://via.placeholder.com/400x300" alt="">
+    <div class="card-content">
+      <h3>Peluche Lapin crochet</h3>
+      <div class="price">19,99 €</div>
 
-  <button type="submit">Acheter</button>
-</form>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="tonemailpaypal@gmail.com">
+        <input type="hidden" name="item_name" value="Peluche Lapin crochet">
+        <input type="hidden" name="amount" value="19.99">
+        <input type="hidden" name="currency_code" value="EUR">
+        <button type="submit">Acheter</button>
+      </form>
+    </div>
   </div>
 
+  <!-- PRODUIT 2 -->
   <div class="card">
-    <img src="https://via.placeholder.com/300x200?text=Portecle+fait+main" alt="">
-    <h3>Porte-clé artisanal</h3>
-    <p>9,99 €</p>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-  <input type="hidden" name="cmd" value="_xclick">
-  <input type="hidden" name="business" value="contact.monpetitateliercreatif@gmail.com">
-  <input type="hidden" name="item_name" value="Peluche crochet">
-  <input type="hidden" name="amount" value="19.99">
-  <input type="hidden" name="currency_code" value="EUR">
+    <img src="https://via.placeholder.com/400x300" alt="">
+    <div class="card-content">
+      <h3>Porte-clé crochet</h3>
+      <div class="price">9,99 €</div>
 
-  <button type="submit">Acheter</button>
-</form>
-  </div>
-
-  <div class="card">
-    <img src="https://via.placeholder.com/300x200?text=Sac+fait+main" alt="">
-    <h3>Sac crochet</h3>
-    <p>29,99 €</p>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-  <input type="hidden" name="cmd" value="_xclick">
-  <input type="hidden" name="business" value="contact.monpetitateliercreatif@gmail.com">
-  <input type="hidden" name="item_name" value="Peluche crochet">
-  <input type="hidden" name="amount" value="19.99">
-  <input type="hidden" name="currency_code" value="EUR">
-
-  <button type="submit">Acheter</button>
-</form>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="tonemailpaypal@gmail.com">
+        <input type="hidden" name="item_name" value="Porte-clé crochet">
+        <input type="hidden" name="amount" value="9.99">
+        <input type="hidden" name="currency_code" value="EUR">
+        <button type="submit">Acheter</button>
+      </form>
+    </div>
   </div>
 
 </div>
+
+<footer>
+  © 2026 Atelier Crochet Handmade - Fait avec ❤️
+</footer>
 
 </body>
 </html>
