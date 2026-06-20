@@ -3,99 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boutique Handmade Crochet</title>
+<title>Atelier Crochet Handmade</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
-  color: #333;
+body{
+  margin:0;
+  font-family:Inter, sans-serif;
+  background:#faf7f5;
+  color:#2b2b2b;
 }
 
 /* HEADER */
-header {
-  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
+header{
+  background:linear-gradient(120deg,#1c1c1c,#3a2f2f);
+  color:#f5f0ea;
+  text-align:center;
+  padding:60px 20px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 32px;
+header h1{
+  font-family:"Playfair Display",serif;
+  margin:0;
+  font-size:40px;
 }
 
-header p {
-  margin-top: 10px;
-  font-size: 16px;
+header p{
+  opacity:.8;
 }
 
-/* PRODUITS */
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  padding: 30px;
-  max-width: 1100px;
-  margin: auto;
+/* LAYOUT */
+.container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  padding:30px;
+  max-width:1100px;
+  margin:auto;
 }
 
-.card {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+/* CARD */
+.card{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.card:hover{
+  transform:translateY(-6px);
 }
 
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
 }
 
-.card-content {
-  padding: 15px;
-  text-align: center;
+.card-content{
+  padding:15px;
+  text-align:center;
 }
 
-.card h3 {
-  margin: 10px 0;
+.price{
+  color:#a67c52;
+  font-weight:600;
+  margin:10px 0;
 }
 
-.price {
-  font-weight: bold;
-  color: #ff1493;
-  margin-bottom: 10px;
+/* BUTTON */
+button{
+  background:#2b2b2b;
+  color:white;
+  border:none;
+  padding:10px;
+  width:100%;
+  border-radius:25px;
+  cursor:pointer;
 }
 
-/* BOUTON */
-button {
-  background: #ff69b4;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 16px;
+button:hover{
+  background:#a67c52;
 }
 
-button:hover {
-  background: #ff1493;
+/* CART */
+.cart{
+  position:fixed;
+  right:20px;
+  top:20px;
+  background:white;
+  padding:15px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  width:250px;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  color: #777;
+.cart h3{
+  margin-top:0;
+}
+
+.cart-item{
+  font-size:14px;
+  margin-bottom:8px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.checkout{
+  margin-top:10px;
+  background:#a67c52;
 }
 </style>
 </head>
@@ -103,53 +121,82 @@ footer {
 <body>
 
 <header>
-  <h1>🧸 Atelier Crochet Handmade</h1>
-  <p>Peluches, porte-clés et accessoires faits main avec amour 💕</p>
+  <h1>Atelier Crochet Handmade</h1>
+  <p>Créations artisanales uniques faites main</p>
 </header>
 
+<!-- PANIER -->
+<div class="cart">
+  <h3>🛒 Panier</h3>
+  <div id="cart-items"></div>
+  <p><strong>Total : <span id="total">0</span> €</strong></p>
+
+  <button class="checkout" onclick="checkout()">Commander</button>
+</div>
+
+<!-- PRODUITS -->
 <div class="container">
 
-  <!-- PRODUIT 1 -->
   <div class="card">
-    <img src="https://via.placeholder.com/400x300" alt="">
+    <img src="https://via.placeholder.com/400x400">
     <div class="card-content">
-      <h3>Peluche Lapin crochet</h3>
-      <div class="price">19,99 €</div>
-
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="tonemailpaypal@gmail.com">
-        <input type="hidden" name="item_name" value="Peluche Lapin crochet">
-        <input type="hidden" name="amount" value="19.99">
-        <input type="hidden" name="currency_code" value="EUR">
-        <button type="submit">Acheter</button>
-      </form>
+      <h3>Peluche Lapin</h3>
+      <div class="price">19.99 €</div>
+      <button onclick="addToCart('Peluche Lapin',19.99)">Ajouter</button>
     </div>
   </div>
 
-  <!-- PRODUIT 2 -->
   <div class="card">
-    <img src="https://via.placeholder.com/400x300" alt="">
+    <img src="https://via.placeholder.com/400x400">
     <div class="card-content">
       <h3>Porte-clé crochet</h3>
-      <div class="price">9,99 €</div>
-
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="tonemailpaypal@gmail.com">
-        <input type="hidden" name="item_name" value="Porte-clé crochet">
-        <input type="hidden" name="amount" value="9.99">
-        <input type="hidden" name="currency_code" value="EUR">
-        <button type="submit">Acheter</button>
-      </form>
+      <div class="price">9.99 €</div>
+      <button onclick="addToCart('Porte-clé crochet',9.99)">Ajouter</button>
     </div>
   </div>
 
 </div>
 
-<footer>
-  © 2026 Atelier Crochet Handmade - Fait avec ❤️
-</footer>
+<script>
+let cart = [];
+
+function addToCart(name, price){
+  cart.push({name,price});
+  updateCart();
+}
+
+function updateCart(){
+  let list = document.getElementById("cart-items");
+  let total = 0;
+  list.innerHTML = "";
+
+  cart.forEach((item,i)=>{
+    total += item.price;
+
+    list.innerHTML += `
+      <div class="cart-item">
+        ${item.name}
+        <span>${item.price}€</span>
+      </div>
+    `;
+  });
+
+  document.getElementById("total").innerText = total.toFixed(2);
+}
+
+function checkout(){
+  if(cart.length === 0){
+    alert("Panier vide !");
+    return;
+  }
+
+  let total = cart.reduce((sum,i)=>sum+i.price,0);
+
+  let url = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=tonemailpaypal@gmail.com&item_name=Boutique%20Commande&amount="+total+"&currency_code=EUR";
+
+  window.open(url,"_blank");
+}
+</script>
 
 </body>
 </html>
