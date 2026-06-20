@@ -3,222 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mon petit atelier créatif</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-  margin:0;
-  font-family:"Quicksand", sans-serif;
-  background: linear-gradient(180deg,#fff7fb,#f3f0ff);
-  color:#444;
+font-family:"Quicksand",sans-serif;
+background:linear-gradient(to bottom,#FFF9F7,#F7F1FF);
+color:#6F5D4B;
 }
 
-/* NAV */
+/* MENU */
+
 nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 30px;
-  background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+background:white;
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 15px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:100;
 }
 
-nav a{
-  margin:0 10px;
-  text-decoration:none;
-  color:#555;
-  font-weight:600;
+.menu a{
+text-decoration:none;
+color:#7D6651;
+margin-left:25px;
+font-weight:600;
+transition:0.3s;
 }
 
-nav a:hover{
-  color:#c084fc;
+.menu a:hover{
+color:#C6A0D8;
 }
 
 /* HERO */
+
 .hero{
-  text-align:center;
-  padding:60px 20px;
+text-align:center;
+padding:70px 20px;
 }
 
 .logo{
-  width:105px;
-  height:105px;
-  border-radius:20%;
-  background:#eee;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+max-width:500px;
+margin:auto;
 }
 
 .logo img{
-  width:100%;
+width:100%;
+height:auto;
 }
 
-h1{
-  font-family:"Great Vibes", cursive;
-  font-size:50px;
-  margin:20px 0 10px;
-  color:#b58cff;
+.hero h1{
+font-family:"Great Vibes",cursive;
+font-size:70px;
+color:#B28AA0;
+margin-top:20px;
 }
 
-.subtitle{
-  max-width:600px;
-  margin:auto;
-  font-size:16px;
-  line-height:1.6;
-  color:#666;
+.hero p{
+max-width:700px;
+margin:30px auto;
+line-height:1.8;
+font-size:18px;
+color:#7D6651;
 }
 
-/* SECTIONS */
-.section{
-  padding:40px 20px;
-  max-width:1100px;
-  margin:auto;
+/* BOUTON */
+
+.bouton{
+display:inline-block;
+padding:15px 35px;
+background:#DAB8C4;
+border-radius:40px;
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.3s;
 }
 
-.section h2{
-  text-align:center;
-  color:#a78bfa;
-  margin-bottom:20px;
+.bouton:hover{
+background:#C9A5D1;
 }
 
-/* PRODUCTS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+/* SECTION */
+
+section{
+padding:80px 10%;
 }
 
-.card{
-  background:white;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-  text-align:center;
+.titre{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+font-family:"Great Vibes",cursive;
+color:#B28AA0;
 }
 
-.card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
+.grille{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
-.card p{
-  margin:10px 0;
+.carte{
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
-button{
-  background:#c084fc;
-  color:white;
-  border:none;
-  padding:10px;
-  width:80%;
-  margin-bottom:15px;
-  border-radius:20px;
-  cursor:pointer;
+.carte:hover{
+transform:translateY(-8px);
 }
 
-button:hover{
-  background:#a855f7;
+.carte img{
+width:100%;
+height:250px;
+object-fit:cover;
 }
 
-/* FOOTER */
+.contenu{
+padding:20px;
+text-align:center;
+}
+
+.contenu h3{
+margin-bottom:15px;
+}
+
 footer{
-  text-align:center;
-  padding:30px;
-  font-size:13px;
-  color:#888;
+background:white;
+text-align:center;
+padding:40px;
+margin-top:50px;
+font-size:14px;
 }
+
 </style>
+
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-  <div><strong>Mon petit atelier créatif</strong></div>
-  <div>
-    <a href="#">Accueil</a>
-    <a href="produit-lapin.html">Peluches</a>
-    <a href="#">Porte-clés</a>
-    <a href="#">Accessoires</a>
-  </div>
+
+<div>
+<b>Mon petit atelier créatif</b>
+</div>
+
+<div class="menu">
+<a href="#">Accueil</a>
+<a href="#">Peluches</a>
+<a href="#">Porte-clés</a>
+<a href="#">Accessoires</a>
+<a href="#">Contact</a>
+</div>
+
 </nav>
 
-<!-- HERO -->
 <div class="hero">
 
-  <!-- LOGO -->
-  <div class="logo">
-    <img src="IMG_20260620_220406.png" alt="Mon logo">
-  </div>
-
-  <h1>Mon petit atelier créatif</h1>
-
-  <p class="subtitle">
-    Bienvenue dans un univers doux et enchanté 🌸  
-    Ici, chaque peluche et accessoire au crochet est imaginé et fabriqué à la main avec amour.  
-    Des créations uniques pour offrir un peu de magie et de tendresse au quotidien ✨
-  </p>
+<div class="logo">
+<img src="logo.png" alt="Mon petit atelier créatif">
 </div>
 
-<!-- NOUVEAUTÉS -->
-<div class="section">
+<p>
 
-  <h2>🌟 Nouveautés</h2>
+✨ Bienvenue dans un univers rempli de douceur et de poésie ✨
 
-  <div class="grid">
+Chaque peluche, porte-clé et accessoire est entièrement confectionné à la main avec patience, passion et une touche de magie.
 
-    <div class="card">
-      <img src="https://via.placeholder.com/300">
-      <p>Peluche Lapin</p>
-      <a href="produit-lapin.html"><button>Voir</button></a>
-    </div>
+Des créations uniques imaginées pour apporter tendresse et émerveillement aux petits comme aux grands. 🌸🧸💜
 
-    <div class="card">
-      <img src="https://via.placeholder.com/300">
-      <p>Porte-clé crochet</p>
-      <a href="#"><button>Voir</button></a>
-    </div>
+</p>
 
-  </div>
+<a href="#" class="bouton">
+Découvrir la boutique
+</a>
+
 </div>
-
-<!-- CATEGORIES -->
-<div class="section">
-
-  <h2>🧸 Catégories</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300">
-      <p>Peluches</p>
-      <a href="produit-lapin.html"><button>Découvrir</button></a>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300">
-      <p>Porte-clés</p>
-      <a href="#"><button>Découvrir</button></a>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300">
-      <p>Accessoires</p>
-      <a href="#"><button>Découvrir</button></a>
-    </div>
-
-  </div>
-</div>
-
-<footer>
-  © 2026 Mon petit atelier créatif — Fait main avec amour 💜
-</footer>
 
 </body>
 </html>
